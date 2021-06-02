@@ -19,9 +19,9 @@ suspend fun printHelloWorld(parentCoroutineContext: CoroutineContext) {
         log("starting coroutine")
         delay(1000) // non-blocking delay for 1 second
         log("delay coroutine")
-        println("World!") // print after delay
+        log("World!") // print after delay
     }
-    println("Hello")
+    log("Hello")
 
 }
 
