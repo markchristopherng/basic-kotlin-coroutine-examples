@@ -8,21 +8,12 @@ fun main() = runBlocking {
 
 suspend fun printHelloWorld(parentCoroutineContext: CoroutineContext) {
 
-    //CoroutineContext = Dispatcher (where to run coroutine) + Job (cancellable thing)
-    val localCoroutineContext = Dispatchers.Default + parentCoroutineContext.job
-
-    //Scope of coroutine
-    val scope = CoroutineScope(localCoroutineContext)
-
-    //creating a coroutine
-    scope.launch {
+    //Coroutine scope =  CoroutineContext = Dispatcher (where to run coroutine) + Job (cancellable thing)
+    CoroutineScope(Dispatchers.Default + parentCoroutineContext.job).launch {
         log("starting coroutine")
         delay(1000) // non-blocking delay for 1 second
         log("delay coroutine")
         log("World!") // print after delay
     }
     log("Hello")
-
 }
-
-
