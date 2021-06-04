@@ -31,7 +31,7 @@ fun main() {
             val defer2 = async {
                 task2()
             }
-            println("$defer1.await() $defer2.await()")
+            log("${defer1.await()} ${defer2.await()}")
         }
     }
     println("Finish")
