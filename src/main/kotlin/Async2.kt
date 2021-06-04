@@ -38,7 +38,7 @@ fun main() {
 
             try {
                 result1 = defer1.await()
-            } catch (throwable: Throwable) {
+            } catch (throwable: Throwable) {    // a caught exception will cancel other coroutines when using async
                 log("Error calling task 1 ${throwable.message}")
             }
             try {

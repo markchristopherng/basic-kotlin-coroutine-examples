@@ -26,7 +26,7 @@ fun main() {
         launch {
             try {
                 task2()
-            } catch (throwable: Throwable) {
+            } catch (throwable: Throwable) {    // a caught exception will NOT cancel other coroutines when using launch
                 log("Exception calling task 2 ${throwable.message}")
             }
         }
